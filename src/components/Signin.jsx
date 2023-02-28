@@ -1,14 +1,15 @@
-import Avatar from "react-avatar"
 import { useState } from "react";
 import LOGO from "../images/chat-logo.png"
-
-
+import { Link } from "react-router-dom";
+import { Nickname } from "./Nickname";
+import { MyAvatar } from "./MyAvatar";
 
 
 export const Signin = () => {
     const stringArray = ["Hello!", "How are you ? ", "What are you doing ? ", "How old are you ? ", "Nice to meet you!", "Where do you live ? "]
     const [randomString, setRandomString] = useState("")
-    const [inputNickname, setInputNickname] = useState("");
+    const [nickname, setNickname] = useState("")
+
     const setImage = (e) => {
         setRandomString(stringArray[Math.floor(Math.random() * stringArray.length)]);
     }
@@ -27,16 +28,20 @@ export const Signin = () => {
                 <div className="b ">{randomString}</div>
                 <br />
                 <br />
-                <input type="text" placeholder="Write your nickname" style={{ height: "50px", placeholder: { color: "#ffb700" } }} className="f4 dark-red b--dark-blue bw3 bg-light-blue" onChange={(e)=>setInputNickname(e.target.value)} />
-                <br /><br /><br />
 
-                <Avatar name={inputNickname} size="50" className="br-100 b " />
-                <br /><br /><br />
+                <Nickname onChange={text => setNickname(text)} />
+                <MyAvatar text={nickname} />
 
-                <button className="b dark-red br4 bg-light-blue bw3 b--dark-blue grow" style={{ height: "40px", width: "100px" }} onClick={}>Submit</button>
-                link
+                <br /><br /><br />
+                <Link to="/chat">
+                    <button className="b dark-red br4 bg-light-blue bw3 b--dark-blue grow" style={{ height: "40px", width: "100px" }} >Submit</button>
+                </Link>
+
             </div>
 
         </>
     )
 }
+
+
+//prosljeđivanje podataka sa link to 

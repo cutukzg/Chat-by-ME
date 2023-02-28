@@ -1,9 +1,16 @@
+import { Header } from "./Header"
+import { Messagecentar } from "./Messagecentar"
+import { ServerMesagecentar } from "./Servermessagecentar"
+import { Writecentar } from "./Writecentar"
 
 
 export const Chat = () => {
   return (
-      <>
-      <h1>h</h1>
-      </>
+    <>
+      <Header />
+      <Messagecentar />
+      <ServerMesagecentar />
+      <Writecentar />
+    </>
   )
 }
