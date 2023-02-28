@@ -1,7 +1,11 @@
 
+import { useContext } from "react";
 import Avatar from "react-avatar";
+import { NicknameContext } from "../App";
 
-export const MyAvatar = ({ text }) => {
+
+export const MyAvatar = () => {
+    const {text} = useContext(NicknameContext)
 
     return (
         <>

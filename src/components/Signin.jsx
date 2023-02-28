@@ -8,7 +8,7 @@ import { MyAvatar } from "./MyAvatar";
 export const Signin = () => {
     const stringArray = ["Hello!", "How are you ? ", "What are you doing ? ", "How old are you ? ", "Nice to meet you!", "Where do you live ? "]
     const [randomString, setRandomString] = useState("")
-    const [nickname, setNickname] = useState("")
+    const [nickname] = useState("")
 
     const setImage = (e) => {
         setRandomString(stringArray[Math.floor(Math.random() * stringArray.length)]);
@@ -29,7 +29,7 @@ export const Signin = () => {
                 <br />
                 <br />
 
-                <Nickname onChange={text => setNickname(text)} />
+                <Nickname />
                 <MyAvatar text={nickname} />
 
                 <br /><br /><br />
