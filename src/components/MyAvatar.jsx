@@ -5,7 +5,7 @@ import { NicknameContext } from "../App";
 
 
 export const MyAvatar = () => {
-    const {text} = useContext(NicknameContext)
+    const { text } = useContext(NicknameContext)
 
     return (
         <>
