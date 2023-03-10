@@ -4,7 +4,6 @@ import { Writecentar } from "./Writecentar"
 import { useState, useEffect, useContext } from "react"
 import { NicknameContext } from "../App";
 
-
 export const Chat = () => {
   const [messages, setMessages] = useState([]);
   const { text } = useContext(NicknameContext)
@@ -17,8 +16,6 @@ export const Chat = () => {
   }))
 
   useEffect(() => {
-
-
     drone.on('open', error => {
       if (error) {
         return console.error(error);
@@ -29,16 +26,13 @@ export const Chat = () => {
     });
 
     const room = drone.subscribe("observable-room");
-
     room.on('data', (data, member) => {
-
       setMessages(prevMessages => [...prevMessages, { member, text: data }]);
     });
 
   }, [drone, member]);
 
   const onSendMessage = (message) => {
-
     drone.publish({
       room: "observable-room",
       message
@@ -49,7 +43,6 @@ export const Chat = () => {
       <Header />
       <Messages messages={messages}
         currentMember={member} />
-
       <Writecentar onSendMessage={onSendMessage} />
     </>
   )

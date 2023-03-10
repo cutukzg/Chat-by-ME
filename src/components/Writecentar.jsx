@@ -8,8 +8,6 @@ export const Writecentar = (props) => {
         props.onSendMessage(writeText)
     }
     return (
-
-
         <div>
             <form onSubmit={onSubmit}>
                 <input className="fl w-90 b--solid bw1 b--black h3"
@@ -22,8 +20,5 @@ export const Writecentar = (props) => {
                 <button className="fl w-10 h3 b--solid bw1 b--black f3">SEND</button>
             </form>
         </div>
-
-
-
     )
 }
